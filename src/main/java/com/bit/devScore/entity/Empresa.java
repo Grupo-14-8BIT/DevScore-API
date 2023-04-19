@@ -5,12 +5,12 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.List;
-
+@Entity
+@Table(name = "empresa")
 public class Empresa {
 
-
     @Getter
-    @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long Id;
     @Getter @Setter
     private String nome;

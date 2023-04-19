@@ -9,7 +9,7 @@ import lombok.Getter;
 public class Desenvolvedor {
     @Id
     @Getter
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
     @Getter

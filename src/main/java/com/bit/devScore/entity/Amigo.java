@@ -3,6 +3,8 @@ package com.bit.devScore.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 
+@Entity
+@Table(name = "amigo")
 public class Amigo {
     @Id
     @Getter
