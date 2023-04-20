@@ -3,7 +3,7 @@ package com.bit.devScore.project.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 
-
+@Entity
 @Table(name = "comunidade")
 public class Comunidade {
     @Id
@@ -14,7 +14,7 @@ public class Comunidade {
     @Column(name = "decricao", nullable = false, length = 100)
     private String descricao;
 
-    @OneToMany
+    @OneToMany()
     @JoinColumn(name = "projeto_id")
     private Projeto projeto;
     @ManyToMany

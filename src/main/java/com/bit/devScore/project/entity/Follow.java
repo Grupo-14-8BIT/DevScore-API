@@ -6,6 +6,8 @@ import lombok.Setter;
 
 import java.time.LocalDateTime;
 
+@Entity
+@Table(name = "follow")
 public class Follow {
     @Id
     @Getter
@@ -17,7 +19,7 @@ public class Follow {
 //    @ManyToMany
 //    private Desenvolvedor desenvolvedor;
 
-//    @Getter @Setter
-//    @ManyToMany
-//    private Empresa empresa;
+    @Getter @Setter
+    @ManyToMany
+    private Empresa empresa;
 }

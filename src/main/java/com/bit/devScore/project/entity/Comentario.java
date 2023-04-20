@@ -5,7 +5,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
-
+@Entity
+@Table(name = "comentario")
 public class Comentario {
     @Id
     @Getter

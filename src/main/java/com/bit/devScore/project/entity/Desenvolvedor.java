@@ -4,7 +4,7 @@ import java.util.List;
 import jakarta.persistence.*;
 import lombok.Getter;
 
-
+@Entity
 @Table(name = "desenvolvedor", schema = "public")
 public class Desenvolvedor {
     @Id
@@ -28,9 +28,9 @@ public class Desenvolvedor {
     @Getter
     @Column(name = "Profile_picture", nullable = true)
     private String profile_imagem;
-//    @Getter
-//    @ManyToMany
-//    private Amigo amigo;
+    @Getter
+    @ManyToMany
+    private List<Amigo> amigo;
     @Getter
     @OneToMany
     @JoinColumn(name = "conquista")
@@ -39,7 +39,15 @@ public class Desenvolvedor {
     @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @Column(name = "projeto", nullable = true)
     private Projeto projeto;
-//    @Getter
+
+    public Desenvolvedor() {
+    }
+
+    public Desenvolvedor(Long id) {
+        this.id = id;
+    }
+
+    //    @Getter
 //    @ManyToMany
 //    private Comunidade comunidade;
 

@@ -4,6 +4,9 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
+@Entity
 @Table(name = "amigo")
 public class Amigo {
     @Id
@@ -12,11 +15,11 @@ public class Amigo {
     @Column(name = "id", nullable = false)
     private long id;
     @Getter
-    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @ManyToMany
     @JoinColumn(name = "usr_id", nullable = true)
-    private Desenvolvedor usr;
+    private List<Desenvolvedor> usr;
     @Getter @Setter
-    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-    @JoinColumn(name = "ami_id", nullable = true)
-    private  Desenvolvedor ami;
+    @ManyToMany
+    @JoinColumn(name = "amigo_id", nullable = true)
+    private List<Desenvolvedor> amigo;
 }

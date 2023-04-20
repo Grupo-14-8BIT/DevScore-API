@@ -5,6 +5,7 @@ import lombok.Setter;
 
 import java.util.List;
 
+@Entity
 @Table(name = "skill")
 public class Skill {
     @Getter
@@ -16,6 +17,6 @@ public class Skill {
     private Linguagem Linguagens;
 
     @Getter @Setter
-    @Column
+    @Column(name= "experiencia")
     private long experiencia;
 }

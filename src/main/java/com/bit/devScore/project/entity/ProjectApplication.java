@@ -1,4 +1,4 @@
-package com.bit.devScore.project;
+package com.bit.devScore.project.entity;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
