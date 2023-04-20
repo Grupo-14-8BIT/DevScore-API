@@ -11,10 +11,11 @@ public class Skill {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @Getter @Setter
-    @ManyToOne
-    private List<Linguagem> Linguagens;
+    @OneToMany
+    @JoinColumn(name = "id_linguagem")
+    private Linguagem Linguagens;
+
     @Getter @Setter
+    @Column
     private long experiencia;
-    @Getter @Setter
-    private Projeto projeto;
 }

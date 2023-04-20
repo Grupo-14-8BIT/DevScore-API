@@ -22,18 +22,18 @@ public class Desenvolvedor {
     @Column(name = "email", nullable = false, length = 100)
     private String email;
     @Getter
-    @Column(name = "skill", nullable = false)
-    private List<Skill> skills;
-    @Getter
-    @Column(name = "imagem", nullable = true)
-    private String imagem;
-    @Getter
     @OneToMany
-    @Column(name = "amigo", nullable = true)
+    @JoinColumn(name = "id_skill")
+    private Skill skills;
+    @Getter
+    @Column(name = "Profile_picture", nullable = true)
+    private String profile_imagem;
+    @Getter
+    @ManyToMany
     private Amigo amigo;
     @Getter
     @OneToMany
-    @Column(name = "conquista", nullable = true)
+    @JoinColumn(name = "conquista")
     private Conquista conquista;
     @Getter
     @OneToMany
@@ -41,7 +41,6 @@ public class Desenvolvedor {
     private Projeto projeto;
     @Getter
     @ManyToMany
-    @Column(name = "comunidade", nullable = true)
     private Comunidade comunidade;
 
 }

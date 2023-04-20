@@ -2,6 +2,7 @@ package com.bit.devScore.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Table(name = "conquista")
@@ -11,7 +12,7 @@ public class Conquista {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
-    @Getter
+    @Getter @Setter
     @Column(name = "path", nullable = false)
     private String imagem;
     @Getter
@@ -22,3 +23,4 @@ public class Conquista {
     private String descricaoConquista;
 
 }
+

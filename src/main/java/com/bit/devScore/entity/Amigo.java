@@ -13,10 +13,10 @@ public class Amigo {
     private long id;
     @Getter
     @OneToMany
-    @Column(name = "usr_id", nullable = true)
+    @JoinColumn(name = "usr_id", nullable = true)
     private Desenvolvedor usr;
     @Getter
     @OneToMany
-    @Column(name = "ami_id", nullable = true)
+    @JoinColumn(name = "ami_id", nullable = true)
     private  Desenvolvedor ami;
 }

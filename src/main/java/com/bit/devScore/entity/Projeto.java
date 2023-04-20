@@ -2,6 +2,10 @@ package com.bit.devScore.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.Setter;
+
+import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "projeto")
@@ -11,5 +15,29 @@ public class Projeto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
+    @Getter @Setter
+    @Column(name ="link_projeto")
+    private String link;
+
+    @Getter @Setter
+    @Column(name="descricao")
+    private String descricao;
+
+    @Getter @Setter
+    @Column(name = "tools")
+    private String tools;
+
+
+    @Getter @Setter
+    @Column(name="data_postagem")
+    private LocalDateTime dataPostagem;
+    @Getter @Setter
+    @OneToMany
+    @JoinColumn(name="comentario_id")
+    private Comentario comentarios;
+    @Getter @Setter
+    @OneToMany
+    @JoinColumn(name="id_comentario")
+    private Like likes;
 
 }

@@ -17,17 +17,16 @@ public class Empresa {
     @Getter @Setter
     private String Descricao;
     @Getter @Setter
-    private List<Amigo> amigos;
+    @ManyToMany
+    private Amigo amigos;
     @Setter @Getter
     private String email;
-    @Setter @Getter
-    private List<Projeto> projetos;
     @Getter @Setter
     private String login;
     @Getter @Setter
     private String imagem;
     @Getter @Setter
-    @ManyToMany()
-    private List<Comunidade> comunidades;
+    @ManyToMany
+    private Comunidade comunidades;
 
 }

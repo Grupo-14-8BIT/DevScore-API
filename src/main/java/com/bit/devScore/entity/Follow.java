@@ -2,23 +2,22 @@ package com.bit.devScore.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.Setter;
 
-@Entity
-@Table(name = "comunidade")
-public class Comunidade {
+import java.time.LocalDateTime;
+
+public class Follow {
     @Id
     @Getter
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false, length = 100)
     private Long id;
-    @Column(name = "decricao", nullable = false, length = 100)
-    private String descricao;
 
-    @OneToMany
-    @JoinColumn(name = "projeto_id")
-    private Projeto projeto;
+    @Getter @Setter
     @ManyToMany
-    @JoinColumn(name = "dev_id")
     private Desenvolvedor desenvolvedor;
 
+    @Getter @Setter
+    @ManyToMany
+    private Empresa empresa;
 }
