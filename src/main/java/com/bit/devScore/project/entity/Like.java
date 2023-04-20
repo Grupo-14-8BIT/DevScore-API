@@ -1,4 +1,4 @@
-package com.bit.devScore.entity;
+package com.bit.devScore.project.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -14,7 +14,7 @@ public class Like {
     private Long id;
 
     @Getter @Setter
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinColumn(name = "id_desenvolvedor")
     private Desenvolvedor user;
 

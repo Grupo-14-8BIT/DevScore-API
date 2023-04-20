@@ -1,4 +1,4 @@
-package com.bit.devScore.entity;
+package com.bit.devScore.project.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -13,11 +13,11 @@ public class Follow {
     @Column(name = "id", nullable = false, length = 100)
     private Long id;
 
-    @Getter @Setter
-    @ManyToMany
-    private Desenvolvedor desenvolvedor;
+//    @Getter @Setter
+//    @ManyToMany
+//    private Desenvolvedor desenvolvedor;
 
-    @Getter @Setter
-    @ManyToMany
-    private Empresa empresa;
+//    @Getter @Setter
+//    @ManyToMany
+//    private Empresa empresa;
 }

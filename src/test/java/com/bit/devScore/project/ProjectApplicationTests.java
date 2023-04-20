@@ -1,10 +1,10 @@
-package com.bit.devScore;
+package com.bit.devScore.project;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DevScoreApplicationTests {
+class ProjectApplicationTests {
 
 	@Test
 	void contextLoads() {

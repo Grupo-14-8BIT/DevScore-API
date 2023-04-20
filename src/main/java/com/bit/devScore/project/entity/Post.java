@@ -1,4 +1,4 @@
-package com.bit.devScore.entity;
+package com.bit.devScore.project.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -26,7 +26,7 @@ public class Post {
     @Getter @Setter
     private String imagem;
     @Getter @Setter
-    @OneToMany
+    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private List<Comentario> comentarios;
 
 }

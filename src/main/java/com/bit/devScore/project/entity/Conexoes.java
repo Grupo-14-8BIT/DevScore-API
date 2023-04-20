@@ -1,4 +1,4 @@
-package com.bit.devScore.entity;
+package com.bit.devScore.project.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -11,12 +11,12 @@ public class Conexoes {
     @Column(name = "id", nullable = false)
     private Long id;
     @Getter @Setter
-    @OneToMany
+    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinColumn(name = "desenvolvedor_id")
     private Desenvolvedor Desenvolvedor;
 
     @Getter @Setter
-    @Column (  name="link", nullable = false, unique = true)
+    @Column (name="link", nullable = false, unique = true)
     private String Endereco;
 
     @Enumerated(EnumType.STRING)

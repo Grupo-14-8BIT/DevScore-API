@@ -1,10 +1,10 @@
-package com.bit.devScore.entity;
+package com.bit.devScore.project.entity;
 
 import java.util.List;
 import jakarta.persistence.*;
 import lombok.Getter;
 
-@Entity
+
 @Table(name = "desenvolvedor", schema = "public")
 public class Desenvolvedor {
     @Id
@@ -22,25 +22,25 @@ public class Desenvolvedor {
     @Column(name = "email", nullable = false, length = 100)
     private String email;
     @Getter
-    @OneToMany
+    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinColumn(name = "id_skill")
     private Skill skills;
     @Getter
     @Column(name = "Profile_picture", nullable = true)
     private String profile_imagem;
-    @Getter
-    @ManyToMany
-    private Amigo amigo;
+//    @Getter
+//    @ManyToMany
+//    private Amigo amigo;
     @Getter
     @OneToMany
     @JoinColumn(name = "conquista")
     private Conquista conquista;
     @Getter
-    @OneToMany
+    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @Column(name = "projeto", nullable = true)
     private Projeto projeto;
-    @Getter
-    @ManyToMany
-    private Comunidade comunidade;
+//    @Getter
+//    @ManyToMany
+//    private Comunidade comunidade;
 
 }

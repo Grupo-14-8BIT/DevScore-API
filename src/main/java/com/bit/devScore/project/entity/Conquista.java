@@ -1,10 +1,10 @@
-package com.bit.devScore.entity;
+package com.bit.devScore.project.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-@Entity
+
 @Table(name = "conquista")
 public class Conquista {
     @Id

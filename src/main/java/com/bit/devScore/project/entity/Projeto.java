@@ -1,4 +1,4 @@
-package com.bit.devScore.entity;
+package com.bit.devScore.project.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -7,7 +7,7 @@ import lombok.Setter;
 import java.time.LocalDateTime;
 import java.util.List;
 
-@Entity
+
 @Table(name = "projeto")
 public class Projeto {
     @Id
@@ -32,11 +32,11 @@ public class Projeto {
     @Column(name="data_postagem")
     private LocalDateTime dataPostagem;
     @Getter @Setter
-    @OneToMany
+    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinColumn(name="comentario_id")
     private Comentario comentarios;
     @Getter @Setter
-    @OneToMany
+    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinColumn(name="id_comentario")
     private Like likes;
 

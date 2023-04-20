@@ -1,11 +1,11 @@
-package com.bit.devScore.entity;
+package com.bit.devScore.project.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.util.List;
-@Entity
+
 @Table(name = "empresa")
 public class Empresa {
 
@@ -16,17 +16,17 @@ public class Empresa {
     private String nome;
     @Getter @Setter
     private String Descricao;
-    @Getter @Setter
-    @ManyToMany
-    private Amigo amigos;
+//    @Getter @Setter
+//    @ManyToMany
+//    private Amigo amigos;
     @Setter @Getter
     private String email;
     @Getter @Setter
     private String login;
     @Getter @Setter
     private String imagem;
-    @Getter @Setter
-    @ManyToMany
-    private Comunidade comunidades;
+//    @Getter @Setter
+//    @ManyToMany
+//    private Comunidade comunidades;
 
 }
