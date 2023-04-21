@@ -9,12 +9,11 @@ public class Comunidade {
     @Id
     @Getter
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false, length = 100)
+    @Column(name = "id", nullable = false)
     private Long id;
     @Column(name = "decricao", nullable = false, length = 100)
     private String descricao;
-
-    @OneToMany()
+    @OneToMany
     @JoinColumn(name = "projeto_id")
     private Projeto projeto;
     @ManyToMany

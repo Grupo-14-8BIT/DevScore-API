@@ -30,6 +30,7 @@ public class Desenvolvedor {
     private String profile_imagem;
     @Getter
     @ManyToMany
+    @Column(name = "amigo")
     private List<Amigo> amigo;
     @Getter
     @OneToMany
@@ -39,16 +40,5 @@ public class Desenvolvedor {
     @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @Column(name = "projeto", nullable = true)
     private Projeto projeto;
-
-    public Desenvolvedor() {
-    }
-
-    public Desenvolvedor(Long id) {
-        this.id = id;
-    }
-
-    //    @Getter
-//    @ManyToMany
-//    private Comunidade comunidade;
 
 }

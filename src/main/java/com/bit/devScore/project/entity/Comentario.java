@@ -11,34 +11,34 @@ public class Comentario {
     @Id
     @Getter
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", nullable = false, length = 100)
+    @Column(name = "id", nullable = false)
     private Long id;
     @Getter
     @Setter
     @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-    @JoinColumn( name =" id_comentario")
+    @JoinColumn(name = " id_comentario")
     private Comentario comentario;
-
     @Getter
     @Setter
     @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-    @JoinColumn(name="id_post")
+    @JoinColumn(name = "id_post")
     private Post post;
     @Getter
     @Setter
     @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-    @JoinColumn(name="id_user")
+    @JoinColumn(name = "id_user")
     private Desenvolvedor user;
 
     @Getter @Setter
-    @Column
+    @Column(name = "texto")
     private String texto;
 
     @Getter @Setter
+    @Column(name = "data")
     private LocalDateTime data;
 
     @Getter @Setter
     @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-    @JoinColumn(name="id_like")
+    @JoinColumn(name = "id_like")
     private Like like;
 }

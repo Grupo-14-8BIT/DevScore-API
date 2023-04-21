@@ -12,14 +12,16 @@ public class Follow {
     @Id
     @Getter
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false, length = 100)
+    @Column(name = "id", nullable = false)
     private Long id;
 
 //    @Getter @Setter
 //    @ManyToMany
+//@Column(name = "desenvolvedor")
 //    private Desenvolvedor desenvolvedor;
 
     @Getter @Setter
     @ManyToMany
+    @Column(name = "empresa")
     private Empresa empresa;
 }

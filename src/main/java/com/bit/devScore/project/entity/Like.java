@@ -12,7 +12,7 @@ public class Like {
     @Id
     @Getter
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false, length = 100)
+    @Column(name = "id", nullable = false)
     private Long id;
 
     @Getter @Setter
@@ -21,5 +21,6 @@ public class Like {
     private Desenvolvedor user;
 
     @Getter @Setter
+    @Column(name = "data")
     private LocalDateTime data;
 }
