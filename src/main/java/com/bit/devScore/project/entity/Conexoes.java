@@ -3,7 +3,7 @@ package com.bit.devScore.project.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-
+@Entity
 public class Conexoes {
     @Id
     @Getter
@@ -11,7 +11,7 @@ public class Conexoes {
     @Column(name = "id", nullable = false)
     private Long id;
     @Getter @Setter
-    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinColumn(name = "desenvolvedor_id")
     private Desenvolvedor Desenvolvedor;
 

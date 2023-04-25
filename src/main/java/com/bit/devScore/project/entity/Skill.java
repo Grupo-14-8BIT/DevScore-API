@@ -4,16 +4,17 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.List;
-
+@Entity
 @Table(name = "skill")
 public class Skill {
     @Getter
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @Getter @Setter
     @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinColumn(name = "id_linguagem")
-    private Linguagem Linguagens;
+    private List<Linguagem> Linguagens;
 
     @Getter @Setter
     @Column

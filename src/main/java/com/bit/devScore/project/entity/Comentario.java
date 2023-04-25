@@ -5,7 +5,9 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
+@Entity
 public class Comentario {
     @Id
     @Getter
@@ -14,9 +16,9 @@ public class Comentario {
     private Long id;
     @Getter
     @Setter
-    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-    @JoinColumn( name =" id_comentario")
-    private Comentario comentario;
+    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @JoinColumn( name =" id_replies")
+    private List<Comentario> replies;
 
     @Getter
     @Setter
@@ -25,7 +27,7 @@ public class Comentario {
     private Post post;
     @Getter
     @Setter
-    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinColumn(name="id_user")
     private Desenvolvedor user;
 
@@ -39,5 +41,5 @@ public class Comentario {
     @Getter @Setter
     @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinColumn(name="id_like")
-    private Like like;
+    private List<Like> like;
 }

@@ -3,7 +3,9 @@ package com.bit.devScore.project.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 
+import java.util.List;
 
+@Entity
 @Table(name = "comunidade")
 public class Comunidade {
     @Id
@@ -16,9 +18,8 @@ public class Comunidade {
 
     @OneToMany
     @JoinColumn(name = "projeto_id")
-    private Projeto projeto;
+    private List<Projeto> projeto;
     @ManyToMany
-    @JoinColumn(name = "dev_id")
-    private Desenvolvedor desenvolvedor;
+    private List<Desenvolvedor> membros;
 
 }

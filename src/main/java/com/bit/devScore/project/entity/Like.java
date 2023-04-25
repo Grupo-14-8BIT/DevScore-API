@@ -6,6 +6,8 @@ import lombok.Setter;
 
 import java.time.LocalDateTime;
 
+
+@Entity
 public class Like {
     @Id
     @Getter

@@ -7,6 +7,9 @@ import lombok.Setter;
 import java.time.LocalDateTime;
 import java.util.List;
 
+
+@Entity
+@Table(name = "posts")
 public class Post {
     @Id
     @Getter

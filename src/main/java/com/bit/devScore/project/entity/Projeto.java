@@ -7,7 +7,7 @@ import lombok.Setter;
 import java.time.LocalDateTime;
 import java.util.List;
 
-
+@Entity
 @Table(name = "projeto")
 public class Projeto {
     @Id
@@ -34,10 +34,10 @@ public class Projeto {
     @Getter @Setter
     @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinColumn(name="comentario_id")
-    private Comentario comentarios;
+    private List<Comentario> comentarios;
     @Getter @Setter
     @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinColumn(name="id_comentario")
-    private Like likes;
+    private List<Like> likes;
 
 }
