@@ -18,16 +18,12 @@ public class Projeto {
     @Getter @Setter
     @Column(name ="link_projeto")
     private String link;
-
     @Getter @Setter
     @Column(name="descricao")
     private String descricao;
-
     @Getter @Setter
     @Column(name = "tools")
     private String tools;
-
-
     @Getter @Setter
     @Column(name="data_postagem")
     private LocalDateTime dataPostagem;

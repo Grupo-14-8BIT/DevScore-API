@@ -28,19 +28,18 @@ public class Desenvolvedor {
     @Getter
     @Column(name = "Profile_picture", nullable = true)
     private String profile_imagem;
-//    @Getter
-//    @ManyToMany
-//    private Amigo amigo;
+    @Getter
+    @ManyToMany
+    @Column(name = "amigo")
+    private List<Amigo> amigo;
     @Getter
     @OneToMany
     @JoinColumn(name = "conquista")
     private List<Conquista> conquista;
     @Getter
     @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-    @JoinColumn(name = "projeto", nullable = true)
-    private List<Projeto> projeto;
-//    @Getter
-//    @ManyToMany
-//    private Comunidade comunidade;
+
+    @Column(name = "projeto", nullable = true)
+    private Projeto projeto;
 
 }
