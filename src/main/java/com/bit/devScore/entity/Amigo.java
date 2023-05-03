@@ -3,6 +3,8 @@ package com.bit.devScore.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 
+import java.util.List;
+
 @Entity
 @Table(name = "amigo")
 public class Amigo {
@@ -14,9 +16,9 @@ public class Amigo {
     @Getter
     @OneToMany
     @JoinColumn(name = "usr_id", nullable = true)
-    private Desenvolvedor usr;
+    private List<Desenvolvedor> usr;
     @Getter
     @OneToMany
     @JoinColumn(name = "ami_id", nullable = true)
-    private  Desenvolvedor ami;
+    private  List<Desenvolvedor> ami;
 }

@@ -1,6 +1,6 @@
-package br.com.DevScoreAPI.DevScoreAPI.repository;
+package com.bit.devScore.repositories;
 
-import br.com.DevScoreAPI.DevScoreAPI.main.Post;
+import com.bit.devScore.entity.Post;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface Posterepository extends JpaRepository <Post, Long> {
+public interface Postrepository extends JpaRepository <Post, Long> {
 
     public List<Post> findByNome (final String nome);
     @Query ("from Aluno where nome like :nome")

@@ -1,6 +1,6 @@
-package br.com.DevScoreAPI.DevScoreAPI.repository;
+package com.bit.devScore.repositories;
 
-import br.com.DevScoreAPI.DevScoreAPI.main.Plataforma;
+import com.bit.devScore.entity.Plataforma;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

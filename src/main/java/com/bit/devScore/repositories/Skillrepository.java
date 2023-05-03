@@ -1,6 +1,6 @@
-package br.com.DevScoreAPI.DevScoreAPI.repository;
+package com.bit.devScore.repositories;
 
-import br.com.DevScoreAPI.DevScoreAPI.main.Skills;
+import com.bit.devScore.entity.Skill;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -8,12 +8,12 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface Skillrepository extends JpaRepository <Skills, Long> {
+public interface Skillrepository extends JpaRepository <Skill, Long> {
 
-    public List<Skills> findByNome (final String nome);
+    public List<Skill> findByNome (final String nome);
     @Query ("from Aluno where nome like :nome")
-    public List<Skills> findByNomeLike (@Param ("nome") final String nome);
+    public List<Skill> findByNomeLike (@Param ("nome") final String nome);
     @Query (value = "select * from alunos where nome like :nome", nativeQuery = true)
-    public List<Skills> findByNomeLikeNative (@Param("nome") final String nome);
+    public List<Skill> findByNomeLikeNative (@Param("nome") final String nome);
 
 }

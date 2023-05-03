@@ -1,6 +1,6 @@
-package br.com.DevScoreAPI.DevScoreAPI.repository;
+package com.bit.devScore.repositories;
 
-import br.com.DevScoreAPI.DevScoreAPI.main.Projetos;
+import com.bit.devScore.entity.Projeto;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -8,12 +8,12 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface Projectosrepository extends JpaRepository <Projetos, Long> {
+public interface Projectosrepository extends JpaRepository <Projeto, Long> {
 
-    public List<Projetos> findByNome (final String nome);
+    public List<Projeto> findByNome (final String nome);
     @Query ("from Aluno where nome like :nome")
-    public List<Projetos> findByNomeLike (@Param ("nome") final String nome);
+    public List<Projeto> findByNomeLike (@Param ("nome") final String nome);
     @Query (value = "select * from alunos where nome like :nome", nativeQuery = true)
-    public List<Projetos> findByNomeLikeNative (@Param("nome") final String nome);
+    public List<Projeto> findByNomeLikeNative (@Param("nome") final String nome);
 
 }

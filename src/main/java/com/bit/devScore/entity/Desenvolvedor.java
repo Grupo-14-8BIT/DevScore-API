@@ -34,9 +34,9 @@ public class Desenvolvedor {
     @Getter
     @OneToMany
     @JoinColumn(name = "conquista")
-    private Conquista conquista;
+    private List<Conquista> conquista;
     @Getter
-    @OneToMany
+    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @Column(name = "projeto", nullable = true)
     private Projeto projeto;
     @Getter
