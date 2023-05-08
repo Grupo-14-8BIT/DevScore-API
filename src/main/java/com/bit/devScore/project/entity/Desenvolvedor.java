@@ -22,24 +22,33 @@ public class Desenvolvedor {
     @Column(name = "email", nullable = false, length = 100)
     private String email;
     @Getter
-    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_skill")
-    private List<Skill> skills;
+
+    @Column(name = "password", nullable = false, length = 30)
+    private String senha;
+
+
+//    @Getter
+//    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+//    @JoinColumn(name = "id_skill")
+//    private Skill skills;
     @Getter
     @Column(name = "Profile_picture", nullable = true)
     private String profile_imagem;
-    @Getter
-    @ManyToMany
-    @Column(name = "amigo")
-    private List<Amigo> amigo;
-    @Getter
-    @OneToMany
-    @JoinColumn(name = "conquista")
-    private List<Conquista> conquista;
-    @Getter
-    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+//    @Getter
+//    @ManyToMany
+//    private Amigo amigo;
+//    @Getter
+//    @OneToMany
+//    @JoinColumn(name = "conquista")
+//    private Conquista conquista;
+//    @Getter
+//    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+//    @Column(name = "projeto", nullable = true)
+//    private Projeto projeto;
+//    @Getter
+//    @ManyToMany
+//    private Comunidade comunidade;
 
-    @Column(name = "projeto", nullable = true)
-    private Projeto projeto;
-
+    public Desenvolvedor() {
+    }
 }
