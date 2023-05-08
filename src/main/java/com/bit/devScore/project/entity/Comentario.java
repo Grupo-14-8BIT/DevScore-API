@@ -5,11 +5,12 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "comentario")
 
-public class Comentario {
+public class Comentario   {
     @Id
     @Getter
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -46,4 +47,7 @@ public class Comentario {
 
     @JoinColumn(name = "id_like")
     private Like like;
+
+
+
 }
