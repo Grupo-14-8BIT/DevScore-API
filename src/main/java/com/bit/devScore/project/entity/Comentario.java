@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "comentario")
@@ -31,7 +32,7 @@ public class Comentario {
     @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinColumn(name = "id_user")
 
-    private Desenvolvedor user;
+    private List<Desenvolvedor> user;
 
     @Getter @Setter
     @Column(name = "texto")
@@ -45,5 +46,5 @@ public class Comentario {
     @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
 
     @JoinColumn(name = "id_like")
-    private Like like;
+    private List<Like> like;
 }

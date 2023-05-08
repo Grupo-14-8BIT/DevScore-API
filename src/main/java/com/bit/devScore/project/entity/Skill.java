@@ -17,7 +17,7 @@ public class Skill {
     @Getter @Setter
     @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinColumn(name = "id_linguagem")
-    private Linguagem Linguagens;
+    private List<Linguagem> Linguagens;
     @Getter @Setter
     @Column(name= "experiencia")
     private long experiencia;
