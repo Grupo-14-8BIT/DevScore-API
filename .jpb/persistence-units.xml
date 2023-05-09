@@ -4,7 +4,7 @@
     <persistence-units>
       <persistence-unit name="Default">
         <packages>
-          <package value="com.bit.devScore" />
+          <package value="com.bit.devScore.project" />
         </packages>
       </persistence-unit>
     </persistence-units>

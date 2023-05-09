@@ -1,4 +1,4 @@
-package com.bit.devScore.entity;
+package com.bit.devScore.project.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -6,40 +6,44 @@ import lombok.Setter;
 
 import java.time.LocalDateTime;
 
+@Entity
+@Table(name = "comentario")
+
 public class Comentario {
     @Id
     @Getter
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false, length = 100)
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id", nullable = false)
     private Long id;
     @Getter
     @Setter
-    @ManyToOne
-    @JoinColumn( name =" id_comentario")
+    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @JoinColumn(name = " id_comentario")
     private Comentario comentario;
-
     @Getter
     @Setter
-    @ManyToOne
-    @JoinColumn(name="id_post")
+    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_post")
     private Post post;
     @Getter
     @Setter
-    @OneToMany
-    @JoinColumn(name="id_user")
+
+    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_user")
+
     private Desenvolvedor user;
 
-    @Getter
-    @Setter
-    @Column
+    @Getter @Setter
+    @Column(name = "texto")
     private String texto;
-    @Getter
-    @Setter
-    private LocalDateTime data;
-
 
     @Getter @Setter
-    @OneToMany
-    @JoinColumn(name="id_like")
+    @Column(name = "data")
+    private LocalDateTime data;
+
+    @Getter @Setter
+    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+
+    @JoinColumn(name = "id_like")
     private Like like;
 }

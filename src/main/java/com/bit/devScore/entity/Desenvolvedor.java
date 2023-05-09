@@ -1,4 +1,4 @@
-package com.bit.devScore.entity;
+package com.bit.devScore.project.entity;
 
 import java.util.List;
 import jakarta.persistence.*;
@@ -22,25 +22,27 @@ public class Desenvolvedor {
     @Column(name = "email", nullable = false, length = 100)
     private String email;
     @Getter
-    @OneToMany
+    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinColumn(name = "id_skill")
-    private Skill skills;
+    private List<Skill> skills;
     @Getter
     @Column(name = "Profile_picture", nullable = true)
     private String profile_imagem;
     @Getter
     @ManyToMany
-    private Amigo amigo;
+    @Column(name = "amigo")
+    private List<Amigo> amigo;
     @Getter
     @OneToMany
     @JoinColumn(name = "conquista")
     private List<Conquista> conquista;
     @Getter
     @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+<<<<<<< HEAD:src/main/java/com/bit/devScore/entity/Desenvolvedor.java
+=======
+
+>>>>>>> a8f45b37ff195478c37868133ed1a54dacfa2e06:src/main/java/com/bit/devScore/project/entity/Desenvolvedor.java
     @Column(name = "projeto", nullable = true)
     private Projeto projeto;
-    @Getter
-    @ManyToMany
-    private Comunidade comunidade;
 
 }

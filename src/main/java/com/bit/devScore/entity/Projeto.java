@@ -1,4 +1,4 @@
-package com.bit.devScore.entity;
+package com.bit.devScore.project.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -18,26 +18,22 @@ public class Projeto {
     @Getter @Setter
     @Column(name ="link_projeto")
     private String link;
-
     @Getter @Setter
     @Column(name="descricao")
     private String descricao;
-
     @Getter @Setter
     @Column(name = "tools")
     private String tools;
-
-
     @Getter @Setter
     @Column(name="data_postagem")
     private LocalDateTime dataPostagem;
     @Getter @Setter
-    @OneToMany
+    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinColumn(name="comentario_id")
-    private Comentario comentarios;
+    private List<Comentario> comentarios;
     @Getter @Setter
-    @OneToMany
+    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinColumn(name="id_comentario")
-    private Like likes;
+    private List<Like> likes;
 
 }
