@@ -6,6 +6,7 @@ import lombok.Setter;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import com.bit.devScore.entity.Comentario;
 
 
 @Entity
@@ -36,6 +37,6 @@ public class Post {
     @Getter @Setter
     @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @Column(name = "comentario")
-    private List<com.bit.devScore.project.entity.Comentario> comentarios;
+    private List<Comentario> comentarios;
 
 }

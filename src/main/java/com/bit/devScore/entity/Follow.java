@@ -20,7 +20,7 @@ public class Follow {
     @Getter @Setter
     @ManyToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinColumn(name = "id_desenvolvedor", nullable = false)
-    private List<com.bit.devScore.project.entity.Desenvolvedor> desenvolvedor;
+    private List<Desenvolvedor> desenvolvedor;
 
     @Getter @Setter
     @ManyToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)

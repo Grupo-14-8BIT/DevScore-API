@@ -2,6 +2,7 @@ package com.bit.devScore.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
+import  com.bit.devScore.entity.Desenvolvedor;
 
 import java.util.List;
 

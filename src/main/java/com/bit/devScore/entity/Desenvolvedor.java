@@ -1,4 +1,4 @@
-package com.bit.devScore.project.entity;
+package com.bit.devScore.entity;
 
 import java.util.List;
 import jakarta.persistence.*;

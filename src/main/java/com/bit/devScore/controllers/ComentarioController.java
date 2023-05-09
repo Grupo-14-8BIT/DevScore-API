@@ -1,6 +1,6 @@
 package com.bit.devScore.controllers;
 
-import com.bit.devScore.project.entity.Comentario;
+import com.bit.devScore.entity.Comentario;
 import com.bit.devScore.repositories.ComentarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

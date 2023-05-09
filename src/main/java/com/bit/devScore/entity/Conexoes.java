@@ -1,4 +1,6 @@
 package com.bit.devScore.entity;
+import  com.bit.devScore.entity.Desenvolvedor;
+
 
 import jakarta.persistence.*;
 import lombok.Getter;
