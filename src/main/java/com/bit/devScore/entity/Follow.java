@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 
 @Entity
@@ -25,5 +26,5 @@ public class Follow {
     @Getter @Setter
     @ManyToMany
     @Column(name = "empresa")
-    private Empresa empresa;
+    private List<Empresa> empresa;
 }
