@@ -1,4 +1,4 @@
-package com.bit.devScore.project.DTOS;
+package com.bit.devScore.DTOS;
 
 import jakarta.persistence.Column;
 

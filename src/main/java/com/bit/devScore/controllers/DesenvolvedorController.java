@@ -1,9 +1,9 @@
-package com.bit.devScore.project.controllers;
+package com.bit.devScore.controllers;
 
-import com.bit.devScore.project.DTOS.DesenvolvedorDTOS;
+import com.bit.devScore.DTOS.DesenvolvedorDTOS;
 import com.bit.devScore.project.entity.Desenvolvedor;
-import com.bit.devScore.project.exeption.NotFoundException;
-import com.bit.devScore.project.repositories.Devrepository;
+import com.bit.devScore.exeption.NotFoundException;
+import com.bit.devScore.services.DesenvolvedorService;
 import jakarta.validation.Valid;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +23,7 @@ import java.util.Map;
 public class DesenvolvedorController {
 
     @Autowired
-    private com.bit.devScore.project.desenvolvedorRepositorys.DesenvolvedorService service;
+    private DesenvolvedorService service;
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE )
@@ -86,7 +86,7 @@ public class DesenvolvedorController {
         return errors;
     };
 
-    @ExceptionHandler(com.bit.devScore.project.exeption.DuplicateKeyException.class)
+    @ExceptionHandler(com.bit.devScore.exeption.DuplicateKeyException.class)
     @ResponseStatus(HttpStatus.CONFLICT)
     public ResponseEntity<String> handleDuplicateKeyException(DuplicateKeyException e) {
         return ResponseEntity.status(HttpStatus.CONFLICT).body(e.getMessage());

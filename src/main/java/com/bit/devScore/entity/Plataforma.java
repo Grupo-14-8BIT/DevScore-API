@@ -1,4 +1,4 @@
-package com.bit.devScore.project.entity;
+package com.bit.devScore.entity;
 
 public enum Plataforma {
     github,linkedin,discord,email

@@ -1,4 +1,4 @@
-package com.bit.devScore.project.exeption;
+package com.bit.devScore.exeption;
 
 public class DuplicateKeyException extends RuntimeException {
 

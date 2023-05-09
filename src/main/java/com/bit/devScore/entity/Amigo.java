@@ -1,10 +1,8 @@
-package com.bit.devScore.project.entity;
-
+package com.bit.devScore.entity;
+import com.bit.devScore.project.entity.Desenvolvedor;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.util.List;
 
 import java.util.List;
 
@@ -17,21 +15,15 @@ public class Amigo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private long id;
-    @Getter
-    @ManyToMany
+
+    @Setter @Getter
+    @ManyToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinColumn(name = "usr_id", nullable = true)
     private List<Desenvolvedor> usr;
-<<<<<<< HEAD:src/main/java/com/bit/devScore/entity/Amigo.java
-    @Getter
-    @OneToMany
-    @JoinColumn(name = "ami_id", nullable = true)
-    private  List<Desenvolvedor> ami;
-=======
-    @Getter @Setter
 
-    @ManyToMany
+    @Getter @Setter
+    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinColumn(name = "amigo_id", nullable = true)
     private List<Desenvolvedor> amigo;
 
->>>>>>> a8f45b37ff195478c37868133ed1a54dacfa2e06:src/main/java/com/bit/devScore/project/entity/Amigo.java
 }

@@ -1,4 +1,4 @@
-package com.bit.devScore.project.entity;
+package com.bit.devScore.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -36,6 +36,6 @@ public class Post {
     @Getter @Setter
     @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @Column(name = "comentario")
-    private List<Comentario> comentarios;
+    private List<com.bit.devScore.project.entity.Comentario> comentarios;
 
 }

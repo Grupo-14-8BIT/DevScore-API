@@ -1,4 +1,4 @@
-package com.bit.devScore.project.repositories;
+package com.bit.devScore.repositories;
 
 import com.bit.devScore.project.entity.Comentario;
 import org.springframework.data.jpa.repository.Query;

@@ -1,4 +1,4 @@
-package com.bit.devScore.project.exeption;
+package com.bit.devScore.exeption;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

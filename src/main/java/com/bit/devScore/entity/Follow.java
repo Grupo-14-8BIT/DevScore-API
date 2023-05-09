@@ -1,16 +1,15 @@
-package com.bit.devScore.project.entity;
+package com.bit.devScore.entity;
 
 import jakarta.persistence.*;
+import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 
 @Entity
 @Table(name = "follow")
-
 public class Follow {
     @Id
     @Getter
@@ -18,13 +17,14 @@ public class Follow {
     @Column(name = "id", nullable = false)
     private Long id;
 
-//    @Getter @Setter
-//    @ManyToMany
-//@Column(name = "desenvolvedor")
-//    private Desenvolvedor desenvolvedor;
+    @Getter @Setter
+    @ManyToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_desenvolvedor", nullable = false)
+    private List<com.bit.devScore.project.entity.Desenvolvedor> desenvolvedor;
 
     @Getter @Setter
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @Column(name = "empresa")
     private List<Empresa> empresa;
+
 }

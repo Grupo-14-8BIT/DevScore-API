@@ -1,4 +1,4 @@
-package com.bit.devScore.project.entity;
+package com.bit.devScore.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -8,7 +8,6 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "like")
-
 public class Like {
     @Id
     @Getter
@@ -24,4 +23,5 @@ public class Like {
     @Getter @Setter
     @Column(name = "data")
     private LocalDateTime data;
+
 }

@@ -1,4 +1,5 @@
-package com.bit.devScore.project.entity;
+package com.bit.devScore.entity;
+import com.bit.devScore.project.entity.Desenvolvedor;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -9,29 +10,27 @@ import java.util.List;
 
 @Entity
 @Table(name = "comentario")
-
-public class Comentario   {
+public class Comentario {
     @Id
     @Getter
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
     private Long id;
-    @Getter
-    @Setter
+
+    @Getter @Setter
     @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinColumn(name = " id_comentario")
     private Comentario comentario;
-    @Getter
-    @Setter
+
+    @Getter @Setter
     @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinColumn(name = "id_post")
     private Post post;
-    @Getter
-    @Setter
 
+
+    @Getter @Setter
     @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinColumn(name = "id_user")
-
     private List<Desenvolvedor> user;
 
     @Getter @Setter
@@ -44,8 +43,7 @@ public class Comentario   {
 
     @Getter @Setter
     @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-
-    @JoinColumn(name = "id_like")
-
+    @Column(name = "id_like", nullable = false)
     private List<Like> like;
+
 }
