@@ -9,13 +9,13 @@ import java.util.List;
 public interface ComentarioRepository extends JpaRepository<Comentario, Long> {
 
 
-    public List<Comentario> findByNome(final String nome);
-
-    @Query("from Aluno where nome like :nome")
-    public List<Comentario> findByNomeLike(@Param("nome") final String nome);
-
-    @Query(value = "select * from alunos where nome like :nome", nativeQuery = true)
-    public List<Comentario> findByNomeLikeNative(@Param("nome") final String nome);
+//    public List<Comentario> findByNome(final String nome);
+//
+//    @Query("from Aluno where nome like :nome")
+//    public List<Comentario> findByNome(@Param("nome") final String nome);
+//
+//    @Query(value = "select * from alunos where nome like :nome", nativeQuery = true)
+//    public List<Comentario> findByNomeLikeNative(@Param("nome") final String nome);
 
 
 }
