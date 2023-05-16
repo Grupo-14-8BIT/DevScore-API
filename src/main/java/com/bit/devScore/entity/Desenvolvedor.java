@@ -1,6 +1,11 @@
-package com.bit.devScore.project.entity;
+package com.bit.devScore.entity;
 
 import java.util.List;
+
+import com.bit.devScore.entity.Amigo;
+import com.bit.devScore.entity.Conquista;
+import com.bit.devScore.entity.Projeto;
+import com.bit.devScore.entity.Skill;
 import jakarta.persistence.*;
 import lombok.Getter;
 

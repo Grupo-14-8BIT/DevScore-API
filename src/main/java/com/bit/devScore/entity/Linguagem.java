@@ -11,7 +11,9 @@ public class Linguagem {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
+
     @Getter
     @Column(name = "nome", nullable = false)
     private String nome;
+
 }
