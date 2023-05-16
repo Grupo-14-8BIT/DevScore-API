@@ -7,7 +7,7 @@ import lombok.Setter;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "like")
+@Table(name = "likes")
 public class Like {
     @Id
     @Getter
@@ -16,7 +16,8 @@ public class Like {
     private Long id;
 
     @Getter @Setter
-    @OneToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+//    @OneToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL) spenas em delecao
+    @OneToOne
     @JoinColumn(name = "id_desenvolvedor")
     private Desenvolvedor user;
 
