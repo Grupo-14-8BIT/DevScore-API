@@ -1,6 +1,6 @@
 package com.bit.devScore.services;
 
-import com.bit.devScore.project.entity.Desenvolvedor;
+import com.bit.devScore.entity.Desenvolvedor;
 import com.bit.devScore.repositories.Devrepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,12 +48,5 @@ public class DesenvolvedorService {
             return ResponseEntity.status(HttpStatus.CONFLICT).body("email ja cadastrado");
         }
     }
-
-
-
-
-
-
-
 
 }

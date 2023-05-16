@@ -1,4 +1,6 @@
 package com.bit.devScore.entity;
+import  com.bit.devScore.entity.Desenvolvedor;
+
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -13,13 +15,16 @@ public class Conexoes {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
+
     @Getter @Setter
     @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinColumn(name = "desenvolvedor_id")
     private Desenvolvedor Desenvolvedor;
+
     @Getter @Setter
     @Column (name="link", nullable = false, unique = true)
     private String Endereco;
+
     @Enumerated(EnumType.STRING)
     @Column(name = "plataforma")
     private Plataforma plataforma;

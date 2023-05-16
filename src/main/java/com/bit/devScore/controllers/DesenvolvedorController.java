@@ -1,7 +1,7 @@
 package com.bit.devScore.controllers;
 
 import com.bit.devScore.DTOS.DesenvolvedorDTOS;
-import com.bit.devScore.project.entity.Desenvolvedor;
+import com.bit.devScore.entity.Desenvolvedor;
 import com.bit.devScore.exeption.NotFoundException;
 import com.bit.devScore.services.DesenvolvedorService;
 import jakarta.validation.Valid;
