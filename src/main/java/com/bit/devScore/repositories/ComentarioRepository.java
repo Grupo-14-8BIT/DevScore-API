@@ -13,13 +13,11 @@ public interface ComentarioRepository extends JpaRepository<Comentario, Long> {
 //
 //    @Query("from Aluno where nome like :nome")
 //    public List<Comentario> findByNome(@Param("nome") final String nome);
-//
-//    @Query(value = "select * from alunos where nome like :nome", nativeQuery = true)
-//    public List<Comentario> findByNomeLikeNative(@Param("nome") final String nome);
-@Query("FROM Comentario WHERE active = true")
-List<Comentario> findActiveComentario(@Param("active")final  boolean active);
 
-    @Query("FROM Comentario WHERE exit = null")
-    List<Comentario> findByAvailable();
+    @Query(value = "select * from alunos where nome like :nome", nativeQuery = true)
+    public List<Comentario> findByNomeLikeNative(@Param("nome") final String nome);
+
+
+
 
 }
