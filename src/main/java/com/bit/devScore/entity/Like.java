@@ -7,7 +7,7 @@ import lombok.Setter;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "like")
+@Table(name = "like",schema = "public")
 public class Like {
     @Id
     @Getter
