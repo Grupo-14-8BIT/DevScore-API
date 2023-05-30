@@ -34,39 +34,14 @@ public class DesenvolvedorController {
         return service.findById(id);
     };
 
-//    @RequestMapping(value = "/all", method = RequestMethod.GET)
-//
-//    public ResponseEntity<?> findAll( ){
-//        return service.findAll();
-//    };
-//
-//    @RequestMapping(value = "/ativos", method = RequestMethod.GET)
-//    public ResponseEntity<?> findAtivo( ){
-//        return service.findAtivo();
-//    };
+    @RequestMapping(value = "/create", method = RequestMethod.POST,
+            produces = MediaType.APPLICATION_JSON_VALUE )
+    public ResponseEntity<?> create( @RequestBody @Valid DesenvolvedorDTOS desenvolvedorDTOS){
+                Desenvolvedor desenvolvedor = new Desenvolvedor();
+                BeanUtils.copyProperties(desenvolvedorDTOS, desenvolvedor);
+                return service.create(desenvolvedor);
+    };
 
-
-    @PostMapping
-    public ResponseEntity<?> create(@RequestBody @Valid DesenvolvedorDTOS desenvolvedorDTOS){
-        Desenvolvedor desenvolvedor = new Desenvolvedor() ;
-        BeanUtils.copyProperties(desenvolvedorDTOS,desenvolvedor);
-
-        return service.create(desenvolvedor);
-    }
-
-
-//    @PutMapping("/update/{id}")
-//    public ResponseEntity<?> updateEntity(@PathVariable Long id, @RequestBody  @Valid Desenvolvedor desenvolvedorDTOS) {
-//
-//        return service.update(id, desenvolvedorDTOS);
-//    }
-
-
-
-//    @DeleteMapping("/delete/{id}")
-//    public ResponseEntity<?> deletar(@PathVariable Long id) {
-//        return  service.delete(id);
-//    }
 
     @ExceptionHandler(NotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)

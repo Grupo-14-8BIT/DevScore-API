@@ -12,13 +12,16 @@ public class Conquista {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
+
     @Getter @Setter
     @Column(name = "path", nullable = false)
     private String imagem;
-    @Getter
+
+    @Getter @Setter
     @Column(name = "n_conquista", nullable = false)
     private String nomeConquista;
-    @Getter
+
+    @Getter @Setter
     @Column(name = "descricao_conquista", nullable = false, length = 250)
     private String descricaoConquista;
 

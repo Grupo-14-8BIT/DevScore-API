@@ -17,6 +17,8 @@ public class DesenvolvedorDTOS {
    @Size(max = 70, message = "nome muito longo")
 
     private String nome;
+    @Size(max = 70, message = "Nick muito longo")
+
     @NotBlank(message =" atributo nao pode estar vazio")
     private String nick;
     @Email(message = "Email nao valido")

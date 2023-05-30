@@ -34,26 +34,18 @@ public class DesenvolvedorService {
 
         if ( desenvolvedorRepository.findByEmail(dev.getEmail()).isEmpty() ) {
 
-
             try {
-                //dev.setAtivo(true);
+                dev.setAtivo(true);
                 desenvolvedorRepository.save(dev);
                 TransactionAspectSupport.currentTransactionStatus().flush();
                 return ResponseEntity.status(HttpStatus.CREATED).body(dev);
             } catch (Exception e) {
                 TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
-                return ResponseEntity.badRequest().body(e.toString());
+                return ResponseEntity.badRequest().body(e.getCause().getCause().getLocalizedMessage());
             }
         } else {
             return ResponseEntity.status(HttpStatus.CONFLICT).body("email ja cadastrado");
         }
     }
-
-
-
-
-
-
-
 
 }

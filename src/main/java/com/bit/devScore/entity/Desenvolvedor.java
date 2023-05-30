@@ -1,6 +1,10 @@
 package com.bit.devScore.entity;
 
 import java.util.List;
+import com.bit.devScore.entity.Amigo;
+import com.bit.devScore.entity.Conquista;
+import com.bit.devScore.entity.Projeto;
+import com.bit.devScore.entity.Skill;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -13,16 +17,19 @@ public class Desenvolvedor {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
+    @Getter @Setter
+    private boolean ativo;
 
-    @Getter
+    @Getter @Setter
     @Column(name = "nome", nullable = false, length = 100)
     private String nome;
 
-    @Getter
-    @Column(name = "nick", nullable = false, length = 100)
+    @Getter @Setter
+    @Column(name = "nick", nullable = false, length = 100, unique = true)
     private String nick;
-    @Getter
-    @Column(name = "email", nullable = false, length = 100)
+
+    @Getter @Setter
+    @Column(name = "email", nullable = false, length = 100, unique = true)
     private String email;
 
     @Getter @Setter

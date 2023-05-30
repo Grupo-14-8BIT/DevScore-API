@@ -3,11 +3,9 @@ package com.bit.devScore.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-
 import java.time.LocalDateTime;
 import java.util.List;
 import com.bit.devScore.entity.Comentario;
-
 
 @Entity
 @Table(name = "post")
@@ -17,6 +15,7 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
+
     @Getter @Setter
     @Column(name = "name")
     private String nome;
@@ -28,12 +27,15 @@ public class Post {
     @Getter @Setter
     @Column(name = "data_post")
     private LocalDateTime data_post;
+
     @Getter @Setter
     @Column(name = "data_atividade")
     private LocalDateTime data_atividade;
+
     @Getter @Setter
     @Column(name = "image")
     private String imagem;
+
     @Getter @Setter
     @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @Column(name = "comentario")

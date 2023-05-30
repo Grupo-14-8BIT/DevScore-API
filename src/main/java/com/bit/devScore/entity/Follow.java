@@ -1,12 +1,11 @@
 package com.bit.devScore.entity;
 
+import com.bit.devScore.entity.Desenvolvedor;
 import jakarta.persistence.*;
 import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
-
 import java.time.LocalDateTime;
-
 
 @Entity
 @Table(name = "follow")
