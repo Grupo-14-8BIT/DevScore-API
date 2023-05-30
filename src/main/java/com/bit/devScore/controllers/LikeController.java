@@ -2,8 +2,9 @@ package com.bit.devScore.controllers;
 
 import com.bit.devScore.entity.Like;
 import com.bit.devScore.repositories.LikeRepository;
-import com.bit.devScore.services.DesenvolvedorService;
+import com.bit.devScore.services.LikeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.repository.query.Param;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,6 +20,8 @@ import java.util.Map;
 public class LikeController {
     @Autowired
     private LikeRepository Like_repo;
+    @Autowired
+    private LikeService Like_serv;
 
     @GetMapping("/{id}")
     public ResponseEntity<?> findById(@RequestParam("id")final long id){
@@ -40,6 +43,20 @@ public ResponseEntity<?> findAll() {
         return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 
     }
+}
+@GetMapping("/create")
+    public ResponseEntity<?> create(@RequestBody final Like like){
+    try {
+        this.Like_serv.signup(like);
+        return ResponseEntity.ok("Registrado cadastrado com Sucesso");
+    }
+    catch (DataIntegrityViolationException e) {
+        return ResponseEntity.internalServerError().body("Error: " + e.getCause().getCause().getMessage());
+    }
+    catch (RuntimeException e){
+        return ResponseEntity.badRequest().body("Error: " + e.getMessage());
+    }
+
 }
 
 
