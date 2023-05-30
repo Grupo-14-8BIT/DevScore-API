@@ -39,7 +39,7 @@ private ComentarioRepository comentarioRepository;
         }
     }
     @PutMapping("/{id}")
-    public ResponseEntity<?> atualizar(@PathVariable final Long id, @RequestBody final Comentario comentario) {
+    public ResponseEntity<?> update(@PathVariable final Long id, @RequestBody final Comentario comentario) {
         if (id.equals(comentario.getId())) {
             this.comentarioRepository.save(comentario);
         } else {
