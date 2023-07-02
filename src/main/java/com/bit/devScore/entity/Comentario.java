@@ -1,9 +1,9 @@
 package com.bit.devScore.entity;
 
-import com.bit.devScore.entity.Desenvolvedor;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -18,7 +18,7 @@ public class Comentario {
 
     @Getter @Setter
     @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-    @JoinColumn(name = " id_comentario")
+    @JoinColumn(name = " id_comentario", nullable = true)
     private Comentario comentario;
 
     @Getter @Setter
@@ -27,9 +27,9 @@ public class Comentario {
     private Post post;
 
     @Getter @Setter
-    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_user")
-    private List<Desenvolvedor> user;
+    @OneToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_autor")
+    private Desenvolvedor user;
 
     @Getter @Setter
     @Column(name = "texto")

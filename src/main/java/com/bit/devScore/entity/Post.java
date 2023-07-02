@@ -3,9 +3,9 @@ package com.bit.devScore.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+
 import java.time.LocalDateTime;
 import java.util.List;
-import com.bit.devScore.entity.Comentario;
 
 @Entity
 @Table(name = "post")
@@ -40,5 +40,10 @@ public class Post {
     @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @Column(name = "comentario")
     private List<Comentario> comentarios;
+
+    @Getter @Setter
+    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @Column(name = "likes")
+    private List<Like> like;
 
 }

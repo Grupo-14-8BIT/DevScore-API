@@ -1,13 +1,10 @@
 package com.bit.devScore.entity;
 
-import java.util.List;
-import com.bit.devScore.entity.Amigo;
-import com.bit.devScore.entity.Conquista;
-import com.bit.devScore.entity.Projeto;
-import com.bit.devScore.entity.Skill;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.List;
 
 @Entity
 @Table(name = "desenvolvedor", schema = "public")
@@ -16,22 +13,29 @@ public class Desenvolvedor {
     @Getter
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
+    //dtos
     private Long id;
+    @Getter @Setter
+    private boolean ativo;
 
     @Getter @Setter
     @Column(name = "nome", nullable = false, length = 100)
+    //dtos
     private String nome;
 
     @Getter @Setter
-    @Column(name = "nick", nullable = false, length = 100)
+    @Column(name = "nick", nullable = false, length = 100, unique = true)
+    //dtos
     private String nick;
 
     @Getter @Setter
-    @Column(name = "email", nullable = false, length = 100)
+    @Column(name = "email", nullable = false, length = 100, unique = true)
+    //dtos
     private String email;
 
     @Getter @Setter
     @Column(name = "senha", nullable = false)
+    //dtos
     private String senha;
 //
 //    @Getter
@@ -39,23 +43,29 @@ public class Desenvolvedor {
 //    @JoinColumn(name = "id_skill")
 //    private List<Skill> skills;
 //
-//    @Getter
-//    @Column(name = "Profile_picture", nullable = true)
-//    private String profile_imagem;
+    @Getter
+    @Column(name = "Profile_picture", nullable = true)
+    private String profile_imagem;
 //
-//    @Getter
-//    @ManyToMany
-//    @Column(name = "amigo")
-//    private List<Amigo> amigo;
+    @Setter @Getter
+    @ManyToMany
+    @Column(name = "amigo")
+    private List<Amigo> amigo;
 //
 //    @Getter
 //    @OneToMany
 //    @JoinColumn(name = "conquista")
 //    private List<Conquista> conquista;
-//
-//    @Getter
-//    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-//    @Column(name = "projeto", nullable = true)
-//    private List<Projeto> projeto;
+    @Getter
+    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @Column(name = "projeto", nullable = true)
+    private List<Projeto> projeto;
+
+    // add skill
+    //delete skill
+    //adicionar amigo
+    //excluir amigo
+    //adicionar projeto
+    //excluir projeto
 
 }

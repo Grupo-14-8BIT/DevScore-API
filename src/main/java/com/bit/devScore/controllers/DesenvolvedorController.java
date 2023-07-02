@@ -14,7 +14,6 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
 import org.yaml.snakeyaml.constructor.DuplicateKeyException;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -25,48 +24,57 @@ public class DesenvolvedorController {
     @Autowired
     private DesenvolvedorService service;
 
+
+
     @RequestMapping(value = "/{id}", method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE )
-
     public ResponseEntity<?> findById(
             @PathVariable(value = "id") Long id
     ){
         return service.findById(id);
     };
 
-//    @RequestMapping(value = "/all", method = RequestMethod.GET)
-//
-//    public ResponseEntity<?> findAll( ){
-//        return service.findAll();
-//    };
-//
-//    @RequestMapping(value = "/ativos", method = RequestMethod.GET)
-//    public ResponseEntity<?> findAtivo( ){
-//        return service.findAtivo();
-//    };
+    @RequestMapping(value = "/create", method = RequestMethod.POST,
+            produces = MediaType.APPLICATION_JSON_VALUE )
+    public ResponseEntity<?> create( @RequestBody @Valid DesenvolvedorDTOS desenvolvedorDTOS){
+                Desenvolvedor desenvolvedor = new Desenvolvedor();
+                BeanUtils.copyProperties(desenvolvedorDTOS, desenvolvedor);
+                return service.create(desenvolvedor);
+    };
 
-
-    @PostMapping
-    public ResponseEntity<?> create(@RequestBody @Valid DesenvolvedorDTOS desenvolvedorDTOS){
-        Desenvolvedor desenvolvedor = new Desenvolvedor() ;
-        BeanUtils.copyProperties(desenvolvedorDTOS,desenvolvedor);
-
+    @RequestMapping(value = "/update", method = RequestMethod.POST,
+            produces = MediaType.APPLICATION_JSON_VALUE )
+    public ResponseEntity<?> update( @RequestBody @Valid DesenvolvedorDTOS desenvolvedorDTOS){
+        Desenvolvedor desenvolvedor = new Desenvolvedor();
+        BeanUtils.copyProperties(desenvolvedorDTOS, desenvolvedor);
         return service.create(desenvolvedor);
-    }
+    };
+
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE,
+            produces = MediaType.APPLICATION_JSON_VALUE )
+    public ResponseEntity<?> delete(
+            @PathVariable(value = "id") Long id
+    ){
+        return service.delete(id);
+    };
 
 
-//    @PutMapping("/update/{id}")
-//    public ResponseEntity<?> updateEntity(@PathVariable Long id, @RequestBody  @Valid Desenvolvedor desenvolvedorDTOS) {
-//
-//        return service.update(id, desenvolvedorDTOS);
-//    }
 
 
 
-//    @DeleteMapping("/delete/{id}")
-//    public ResponseEntity<?> deletar(@PathVariable Long id) {
-//        return  service.delete(id);
-//    }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     @ExceptionHandler(NotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
