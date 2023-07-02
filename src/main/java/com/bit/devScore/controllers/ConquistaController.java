@@ -1,17 +1,17 @@
 package com.bit.devScore.controllers;
 
-import com.bit.devScore.entity.Like;
-import com.bit.devScore.services.LikeService;
+import com.bit.devScore.entity.Conquista;
+import com.bit.devScore.services.ConquistaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-@RequestMapping(value = "/api/Like")
-public class LikeController {
+@RequestMapping(value = "/api/Conquista")
+public class ConquistaController {
     @Autowired
-    private LikeService service;
+    private ConquistaService service;
 
     @GetMapping("/{id}")
     public ResponseEntity<?> findById(@PathVariable("id")final long id){
@@ -26,12 +26,12 @@ public class LikeController {
 
 
     @PostMapping
-    public ResponseEntity<?> create(@RequestBody final Like like) {
-        return service.create(like);
+    public ResponseEntity<?> create(@RequestBody final Conquista conquista) {
+        return service.create(conquista);
     }
     @PutMapping("/{id}")
-    public ResponseEntity<?> uodate(@PathVariable final Long id, @RequestBody final Like like) {
-        return this.service.update( like.getId(), like);
+    public ResponseEntity<?> uodate(@PathVariable final Long id, @RequestBody final Conquista conquista) {
+        return this.service.update( conquista.getId(), conquista);
     }
 
     @DeleteMapping

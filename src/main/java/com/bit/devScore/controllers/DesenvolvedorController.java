@@ -14,7 +14,6 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
 import org.yaml.snakeyaml.constructor.DuplicateKeyException;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -25,9 +24,10 @@ public class DesenvolvedorController {
     @Autowired
     private DesenvolvedorService service;
 
+
+
     @RequestMapping(value = "/{id}", method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE )
-
     public ResponseEntity<?> findById(
             @PathVariable(value = "id") Long id
     ){
@@ -41,6 +41,39 @@ public class DesenvolvedorController {
                 BeanUtils.copyProperties(desenvolvedorDTOS, desenvolvedor);
                 return service.create(desenvolvedor);
     };
+
+    @RequestMapping(value = "/update", method = RequestMethod.POST,
+            produces = MediaType.APPLICATION_JSON_VALUE )
+    public ResponseEntity<?> update( @RequestBody @Valid DesenvolvedorDTOS desenvolvedorDTOS){
+        Desenvolvedor desenvolvedor = new Desenvolvedor();
+        BeanUtils.copyProperties(desenvolvedorDTOS, desenvolvedor);
+        return service.create(desenvolvedor);
+    };
+
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE,
+            produces = MediaType.APPLICATION_JSON_VALUE )
+    public ResponseEntity<?> delete(
+            @PathVariable(value = "id") Long id
+    ){
+        return service.delete(id);
+    };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     @ExceptionHandler(NotFoundException.class)

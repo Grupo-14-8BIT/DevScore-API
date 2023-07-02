@@ -1,17 +1,17 @@
 package com.bit.devScore.controllers;
 
-import com.bit.devScore.entity.Like;
-import com.bit.devScore.services.LikeService;
+import com.bit.devScore.entity.Linguagem;
+import com.bit.devScore.services.LinguagemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-@RequestMapping(value = "/api/Like")
-public class LikeController {
+@RequestMapping(value = "/api/Linguagem")
+public class LinguagemController {
     @Autowired
-    private LikeService service;
+    private LinguagemService service;
 
     @GetMapping("/{id}")
     public ResponseEntity<?> findById(@PathVariable("id")final long id){
@@ -20,18 +20,18 @@ public class LikeController {
 
 
     @GetMapping("/lista")
-    public ResponseEntity<?> listAll(){
+    public ResponseEntity<?> all(){
         return ResponseEntity.ok(this.service.findAll());
     }
 
 
     @PostMapping
-    public ResponseEntity<?> create(@RequestBody final Like like) {
-        return service.create(like);
+    public ResponseEntity<?> create(@RequestBody final Linguagem linguagem) {
+        return service.create(linguagem);
     }
     @PutMapping("/{id}")
-    public ResponseEntity<?> uodate(@PathVariable final Long id, @RequestBody final Like like) {
-        return this.service.update( like.getId(), like);
+    public ResponseEntity<?> update(@PathVariable final Long id, @RequestBody final Linguagem linguagem) {
+        return this.service.update( linguagem.getId(), linguagem);
     }
 
     @DeleteMapping

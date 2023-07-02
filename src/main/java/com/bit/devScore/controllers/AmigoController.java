@@ -1,17 +1,17 @@
 package com.bit.devScore.controllers;
 
-import com.bit.devScore.entity.Like;
-import com.bit.devScore.services.LikeService;
+import com.bit.devScore.entity.Amigo;
+import com.bit.devScore.services.AmigoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-@RequestMapping(value = "/api/Like")
-public class LikeController {
+@RequestMapping(value = "/api/Amigo")
+public class AmigoController {
     @Autowired
-    private LikeService service;
+    private AmigoService service;
 
     @GetMapping("/{id}")
     public ResponseEntity<?> findById(@PathVariable("id")final long id){
@@ -26,12 +26,12 @@ public class LikeController {
 
 
     @PostMapping
-    public ResponseEntity<?> create(@RequestBody final Like like) {
-        return service.create(like);
+    public ResponseEntity<?> create(@RequestBody final Amigo amigo) {
+        return service.create(amigo);
     }
     @PutMapping("/{id}")
-    public ResponseEntity<?> uodate(@PathVariable final Long id, @RequestBody final Like like) {
-        return this.service.update( like.getId(), like);
+    public ResponseEntity<?> uodate(@PathVariable final Long id, @RequestBody final Amigo amigo) {
+        return this.service.update( amigo.getId(), amigo);
     }
 
     @DeleteMapping

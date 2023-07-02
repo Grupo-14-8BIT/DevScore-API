@@ -23,9 +23,9 @@ public class Projeto {
     @Column(name="descricao")
     private String descricao;
 
-    @Getter @Setter
-    @Column(name = "tools")
-    private String tools;
+//    @Getter @Setter
+//    @Column(name = "tools")
+//    private String tools;
 
     @Getter @Setter
     @Column(name="data_postagem")
@@ -38,7 +38,7 @@ public class Projeto {
 
     @Getter @Setter
     @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-    @JoinColumn(name="id_comentario")
+    @JoinColumn(name="id_like")
     private List<Like> likes;
 
 }
