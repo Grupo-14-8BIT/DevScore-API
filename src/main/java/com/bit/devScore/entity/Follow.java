@@ -17,12 +17,12 @@ public class Follow {
     private Long id;
 
     @Getter @Setter
-    @ManyToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @ManyToMany(/*fetch = FetchType.LAZY,cascade = CascadeType.ALL*/)
     @JoinColumn(name = "id_desenvolvedor", nullable = false)
     private List<Desenvolvedor> desenvolvedor;
 
     @Getter @Setter
-    @ManyToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @ManyToMany(/*fetch = FetchType.LAZY,cascade = CascadeType.ALL*/)
     @Column(name = "empresa")
     private List<Empresa> empresa;
 

@@ -14,7 +14,7 @@ public class Skill {
     private long id;
 
     @Getter @Setter
-    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @OneToMany(/*fetch = FetchType.LAZY,cascade = CascadeType.ALL*/)
     @JoinColumn(name = "id_linguagem")
     private List<Linguagem> Linguagens;
 

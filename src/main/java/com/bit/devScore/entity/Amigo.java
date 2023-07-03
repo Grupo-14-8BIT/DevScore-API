@@ -13,14 +13,14 @@ public class Amigo {
     @Column(name = "id", nullable = false)
     private long id;
 
-    @Setter @Getter
-    @OneToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-    @JoinColumn(name = "usr_id", nullable = true)
-    private Desenvolvedor usr;
+//    @Setter @Getter
+//    @OneToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+//    @JoinColumn(name = "usr_id", nullable = true)
+//    private Desenvolvedor usr;
 
-    @Getter @Setter
-    @OneToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-    @JoinColumn(name = "amigo_id", nullable = true)
-    private Desenvolvedor amigo;
+//    @Getter @Setter
+//    @OneToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+//    @JoinColumn(name = "amigo_id", nullable = true)
+//    private Desenvolvedor amigo;
 
 }

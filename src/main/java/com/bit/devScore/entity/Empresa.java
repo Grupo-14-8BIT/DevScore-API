@@ -22,7 +22,7 @@ public class Empresa {
     private String Descricao;
 
     @Getter @Setter
-    @ManyToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @ManyToMany(/*fetch = FetchType.LAZY,cascade = CascadeType.ALL*/)
     @Column(name = "amigos")
     private List<Amigo> amigos;
 
@@ -39,7 +39,7 @@ public class Empresa {
     private String imagem;
 
     @Getter @Setter
-    @ManyToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @ManyToMany(/*fetch = FetchType.LAZY,cascade = CascadeType.ALL*/)
     @JoinColumn(name = "comunidade")
     private List<Comunidade> comunidades;
 

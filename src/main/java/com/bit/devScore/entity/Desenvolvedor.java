@@ -43,21 +43,21 @@ public class Desenvolvedor {
 //    @JoinColumn(name = "id_skill")
 //    private List<Skill> skills;
 //
-    @Getter
+    @Getter @Setter
     @Column(name = "Profile_picture", nullable = true)
     private String profile_imagem;
 //
     @Setter @Getter
-    @ManyToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @ManyToMany(/*fetch = FetchType.LAZY,cascade = CascadeType.ALL*/)
     @Column(name = "amigo")
     private List<Amigo> amigo;
 //
-    @Getter
-    @ManyToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @Getter @Setter
+    @ManyToMany(/*fetch = FetchType.LAZY,cascade = CascadeType.ALL*/)
     @JoinColumn(name = "conquista")
     private List<Conquista> conquista;
-    @Getter
-    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @Getter @Setter
+    @OneToMany(/*fetch = FetchType.LAZY,cascade = CascadeType.ALL*/)
     @Column(name = "projeto", nullable = true)
     private List<Projeto> projeto;
 

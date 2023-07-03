@@ -26,7 +26,7 @@ public class Comunidade {
 //    private List<Projeto> projeto;
 
     @Getter @Setter
-    @ManyToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @ManyToMany(/*fetch = FetchType.LAZY,cascade = CascadeType.ALL*/)
     @Column(name = "membros")
     private List<Desenvolvedor> membros;
 

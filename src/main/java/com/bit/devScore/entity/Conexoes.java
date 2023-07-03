@@ -17,7 +17,7 @@ public class Conexoes {
     private Long id;
 
     @Getter @Setter
-    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @ManyToOne(/*fetch = FetchType.LAZY,cascade = CascadeType.ALL*/)
     @JoinColumn(name = "desenvolvedor_id")
     private Desenvolvedor Desenvolvedor;
 

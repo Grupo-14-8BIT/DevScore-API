@@ -32,12 +32,12 @@ public class Projeto {
     private LocalDateTime dataPostagem;
 
     @Getter @Setter
-    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @OneToMany(/*fetch = FetchType.LAZY,cascade = CascadeType.ALL*/)
     @JoinColumn(name="comentario_id")
     private List<Comentario> comentarios;
 
     @Getter @Setter
-    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @OneToMany(/*fetch = FetchType.LAZY,cascade = CascadeType.ALL*/)
     @JoinColumn(name="id_like")
     private List<Like> likes;
 
