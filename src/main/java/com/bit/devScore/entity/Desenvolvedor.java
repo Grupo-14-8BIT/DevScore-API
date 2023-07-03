@@ -37,12 +37,12 @@ public class Desenvolvedor {
     @Column(name = "senha", nullable = false)
     //dtos
     private String senha;
-//
-//    @Getter
-//    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-//    @JoinColumn(name = "id_skill")
-//    private List<Skill> skills;
-//
+
+    @Getter
+    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_skill")
+    private List<Skill> skills;
+
     @Getter @Setter
     @Column(name = "Profile_picture", nullable = true)
     private String profile_imagem;

@@ -39,9 +39,9 @@ public class Comentario {
     @Column(name = "data")
     private LocalDateTime data;
 
-//    @Getter @Setter
-//    @OneToMany(/*fetch = FetchType.LAZY,cascade = CascadeType.ALL*/)
-//    @Column(name = "id_like", nullable = false)
-//    private List<Like> like;
+    @Getter @Setter
+    @OneToMany(/*fetch = FetchType.LAZY,cascade = CascadeType.ALL*/)
+    @Column(name = "id_like", nullable = false)
+    private List<Like> like;
 
 }
