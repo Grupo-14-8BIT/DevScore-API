@@ -36,7 +36,6 @@ public class AmigoService {
         return  ResponseEntity.ok().body(veiculoes);
     }
 
-    @Transactional
     public ResponseEntity<?> create(Amigo dev) {
 
 

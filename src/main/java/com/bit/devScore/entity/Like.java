@@ -17,7 +17,7 @@ public class Like {
 
     @Getter @Setter
 //    @OneToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL) spenas em delecao
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinColumn(name = "id_desenvolvedor")
     private Desenvolvedor user;
 

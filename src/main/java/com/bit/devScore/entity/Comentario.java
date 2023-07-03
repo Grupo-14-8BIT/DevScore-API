@@ -17,12 +17,12 @@ public class Comentario {
     private Long id;
 
     @Getter @Setter
-    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @ManyToOne(/*fetch = FetchType.LAZY,cascade = CascadeType.ALL*/)
     @JoinColumn(name = " id_comentario", nullable = true)
     private Comentario comentario;
 
     @Getter @Setter
-    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @ManyToOne(/*fetch = FetchType.LAZY,cascade = CascadeType.ALL*/)
     @JoinColumn(name = "id_post")
     private Post post;
 

@@ -2,7 +2,6 @@ package com.bit.devScore.services;
 
 import com.bit.devScore.entity.Skill;
 import com.bit.devScore.repositories.SkillRepository;
-import jakarta.transaction.Transactional;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -36,7 +35,7 @@ public class SkillService {
         return  ResponseEntity.ok().body(veiculoes);
     }
 
-    @Transactional
+
     public ResponseEntity<?> create(Skill dev) {
 
 

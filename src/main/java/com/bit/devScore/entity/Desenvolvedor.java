@@ -48,14 +48,14 @@ public class Desenvolvedor {
     private String profile_imagem;
 //
     @Setter @Getter
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @Column(name = "amigo")
     private List<Amigo> amigo;
 //
-//    @Getter
-//    @OneToMany
-//    @JoinColumn(name = "conquista")
-//    private List<Conquista> conquista;
+    @Getter
+    @ManyToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @JoinColumn(name = "conquista")
+    private List<Conquista> conquista;
     @Getter
     @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @Column(name = "projeto", nullable = true)

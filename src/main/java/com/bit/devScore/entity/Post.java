@@ -37,13 +37,13 @@ public class Post {
     private String imagem;
 
     @Getter @Setter
-    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @OneToMany(/*fetch = FetchType.LAZY,cascade = CascadeType.ALL*/)
     @Column(name = "comentario")
     private List<Comentario> comentarios;
 
-    @Getter @Setter
-    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-    @Column(name = "likes")
-    private List<Like> like;
+//    @Getter @Setter
+//    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+//    @Column(name = "likes")
+//    private List<Like> like;
 
 }
