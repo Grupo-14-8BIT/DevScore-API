@@ -2,6 +2,7 @@ package com.bit.devScore.services;
 
 import com.bit.devScore.entity.Projeto;
 import com.bit.devScore.repositories.ProjetoRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,7 +19,7 @@ public class ProjetoService {
     @Autowired
     private ProjetoRepository projetoRepository;
 
-
+    @Transactional
     public ResponseEntity<?> findById (Long id) {
         Optional< Projeto> projetoOptional =projetoRepository.findById(id);
         if (projetoOptional.isEmpty()) {
@@ -29,13 +30,13 @@ public class ProjetoService {
 
         }
     }
-
+    @Transactional
     public ResponseEntity<?> findAll( ) {
         List<Projeto> veiculoes = projetoRepository.findAll();
         return  ResponseEntity.ok().body(veiculoes);
     }
 
-
+    @Transactional
     public ResponseEntity<?> create(Projeto dev) {
 
 
@@ -50,7 +51,7 @@ public class ProjetoService {
             }
 
     }
-
+    @Transactional
     public ResponseEntity<?> update(Long id, Projeto projeto) {
         Optional<Projeto> optionalProjeto = projetoRepository.findById(id);
         if (optionalProjeto.isEmpty()) {
@@ -63,7 +64,7 @@ public class ProjetoService {
         }
     }
 
-
+    @Transactional
     public ResponseEntity<?> delete(Long id) {
         Optional<Projeto> optionalProjeto = this.projetoRepository.findById(id);
 

@@ -30,7 +30,7 @@ public class Projeto {
 
     @Getter @Setter
     @OneToMany
-    @JoinColumn(name="Linguagem")
+    @JoinColumn(name="projeto")
     private List<Linguagem> linguagens;
 
 

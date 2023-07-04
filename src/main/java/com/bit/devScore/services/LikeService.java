@@ -3,6 +3,7 @@ package com.bit.devScore.services;
 import com.bit.devScore.entity.Like;
 import com.bit.devScore.repositories.LikeRepository;
 
+import jakarta.transaction.Transactional;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,7 +20,7 @@ public class LikeService {
     @Autowired
     private LikeRepository likeRepository;
 
-
+    @Transactional
     public ResponseEntity<?> findById (Long id) {
         Optional< Like> likeOptional =likeRepository.findById(id);
         if (likeOptional.isEmpty()) {
@@ -30,13 +31,13 @@ public class LikeService {
 
         }
     }
-
+    @Transactional
     public ResponseEntity<?> findAll( ) {
         List<Like> veiculoes = likeRepository.findAll();
         return  ResponseEntity.ok().body(veiculoes);
     }
 
-
+    @Transactional
     public ResponseEntity<?> create(Like dev) {
 
 
@@ -51,7 +52,7 @@ public class LikeService {
             }
 
     }
-
+    @Transactional
     public ResponseEntity<?> update(Long id, Like like) {
         Optional<Like> optionalLike = likeRepository.findById(id);
         if (optionalLike.isEmpty()) {
@@ -64,7 +65,7 @@ public class LikeService {
         }
     }
 
-
+    @Transactional
     public ResponseEntity<?> delete(Long id) {
         Optional<Like> optionalLike = this.likeRepository.findById(id);
 

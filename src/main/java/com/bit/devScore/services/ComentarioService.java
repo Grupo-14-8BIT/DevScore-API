@@ -2,6 +2,7 @@ package com.bit.devScore.services;
 
 import com.bit.devScore.entity.Comentario;
 import com.bit.devScore.repositories.ComentarioRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,7 +19,7 @@ public class ComentarioService {
     @Autowired
     private ComentarioRepository comentarioRepository;
 
-
+    @Transactional
     public ResponseEntity<?> findById (Long id) {
         Optional< Comentario> comentarioOptional =comentarioRepository.findById(id);
         if (comentarioOptional.isEmpty()) {
@@ -29,13 +30,13 @@ public class ComentarioService {
 
         }
     }
-
+    @Transactional
     public ResponseEntity<?> findAll( ) {
         List<Comentario> veiculoes = comentarioRepository.findAll();
         return  ResponseEntity.ok().body(veiculoes);
     }
 
-
+    @Transactional
     public ResponseEntity<?> create(Comentario dev) {
 
 
@@ -50,7 +51,7 @@ public class ComentarioService {
             }
 
     }
-
+    @Transactional
     public ResponseEntity<?> update(Long id, Comentario comentario) {
         Optional<Comentario> optionalComentario = comentarioRepository.findById(id);
         if (optionalComentario.isEmpty()) {
@@ -62,7 +63,7 @@ public class ComentarioService {
             return ResponseEntity.ok().body("Comentario atualizado com sucesso");
         }
     }
-
+    @Transactional
 
     public ResponseEntity<?> delete(Long id) {
         Optional<Comentario> optionalComentario = this.comentarioRepository.findById(id);

@@ -45,7 +45,7 @@ public class Desenvolvedor {
 
     @Getter
     @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_skill")
+    @JoinColumn(name = "desenvolvedor")
     private List<Skill> skills;
 
     @Getter @Setter
@@ -59,11 +59,11 @@ public class Desenvolvedor {
 //
     @Getter @Setter
     @ManyToMany(/*fetch = FetchType.LAZY,cascade = CascadeType.ALL*/)
-    @JoinColumn(name = "conquista")
+    @JoinColumn(name = "desenvolvedor")
     private List<Conquista> conquista;
     @Getter @Setter
     @OneToMany(/*fetch = FetchType.LAZY,cascade = CascadeType.ALL*/)
-    @Column(name = "projeto", nullable = true)
+    @JoinColumn(name = "desenvolvedor", nullable = true)
     private List<Projeto> projeto;
 
     // add skill

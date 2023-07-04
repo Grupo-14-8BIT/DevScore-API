@@ -2,6 +2,7 @@ package com.bit.devScore.services;
 
 import com.bit.devScore.entity.Linguagem;
 import com.bit.devScore.repositories.LinguagemRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,7 +19,7 @@ public class LinguagemService {
     @Autowired
     private LinguagemRepository linguagemRepository;
 
-
+@Transactional
     public ResponseEntity<?> findById (Long id) {
         Optional< Linguagem> linguagemOptional =linguagemRepository.findById(id);
         if (linguagemOptional.isEmpty()) {
@@ -29,13 +30,13 @@ public class LinguagemService {
 
         }
     }
-
+    @Transactional
     public ResponseEntity<?> findAll( ) {
         List<Linguagem> veiculoes = linguagemRepository.findAll();
         return  ResponseEntity.ok().body(veiculoes);
     }
 
-
+    @Transactional
     public ResponseEntity<?> create(Linguagem dev) {
 
 
@@ -50,7 +51,7 @@ public class LinguagemService {
             }
 
     }
-
+    @Transactional
     public ResponseEntity<?> update(Long id, Linguagem linguagem) {
         Optional<Linguagem> optionalLinguagem = linguagemRepository.findById(id);
         if (optionalLinguagem.isEmpty()) {
@@ -63,7 +64,7 @@ public class LinguagemService {
         }
     }
 
-
+    @Transactional
     public ResponseEntity<?> delete(Long id) {
         Optional<Linguagem> optionalLinguagem = this.linguagemRepository.findById(id);
 
