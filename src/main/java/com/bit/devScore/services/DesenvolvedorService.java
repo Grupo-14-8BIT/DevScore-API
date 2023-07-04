@@ -39,7 +39,7 @@ public class DesenvolvedorService {
     @Transactional
     public ResponseEntity<?> create(Desenvolvedor dev) {
 
-        if ( desenvolvedorRepository.findByEmail(dev.getEmail()).isEmpty() ) {
+        if ( desenvolvedorRepository.findByEmail(dev.getEmail()) == null ) {
 
             try {
                 dev.setAtivo(true);

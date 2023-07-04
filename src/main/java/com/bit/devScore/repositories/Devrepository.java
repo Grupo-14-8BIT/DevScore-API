@@ -14,7 +14,9 @@ import java.util.List;
 public interface Devrepository extends JpaRepository <Desenvolvedor, Long> {
 
     @Query("SELECT c FROM Desenvolvedor c WHERE c.email = :email")
-    List<Desenvolvedor> findByEmail(@Param("email") String email);
+    Desenvolvedor findByEmail(@Param("email") String email);
+
+
 
 }
 

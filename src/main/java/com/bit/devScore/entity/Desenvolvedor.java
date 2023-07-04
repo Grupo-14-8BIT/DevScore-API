@@ -24,7 +24,7 @@ public class Desenvolvedor {
     private String nome;
 
     @Getter @Setter
-    @Column(name = "biografia", nullable = false)
+    @Column(name = "biografia")
     //dtos
     private String biografia;
 
