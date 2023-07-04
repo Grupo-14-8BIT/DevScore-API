@@ -24,6 +24,11 @@ public class Desenvolvedor {
     private String nome;
 
     @Getter @Setter
+    @Column(name = "biografia", nullable = false)
+    //dtos
+    private String biografia;
+
+    @Getter @Setter
     @Column(name = "nick", nullable = false, length = 100, unique = true)
     //dtos
     private String nick;
