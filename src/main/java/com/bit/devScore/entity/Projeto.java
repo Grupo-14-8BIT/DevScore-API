@@ -27,9 +27,12 @@ public class Projeto {
     @Column(name="descricao")
     private String descricao;
 
-//    @Getter @Setter
-//    @Column(name = "tools")
-//    private String tools;
+
+    @Getter @Setter
+    @OneToMany
+    @JoinColumn(name="Linguagem")
+    private List<Linguagem> linguagens;
+
 
     @Getter @Setter
     @Column(name="data_postagem")
