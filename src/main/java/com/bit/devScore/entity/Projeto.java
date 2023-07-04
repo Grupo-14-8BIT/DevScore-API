@@ -20,6 +20,10 @@ public class Projeto {
     private String link;
 
     @Getter @Setter
+    @Column(name ="nome")
+    private String nome;
+
+    @Getter @Setter
     @Column(name="descricao")
     private String descricao;
 

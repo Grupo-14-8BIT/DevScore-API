@@ -30,6 +30,12 @@ public class DesenvolvedorController {
         return service.findById(id);
     };
 
+    @GetMapping("/all")
+    public ResponseEntity<?> listAll(){
+        return ResponseEntity.ok(this.service.findAll());
+    }
+
+
     @RequestMapping(value = "/create", method = RequestMethod.POST,
             produces = MediaType.APPLICATION_JSON_VALUE )
     public ResponseEntity<?> create( @RequestBody  Desenvolvedor desenvolvedorDTOS){
